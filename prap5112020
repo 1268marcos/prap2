@@ -1,4 +1,4 @@
-Package com.exmaple.ThingsToDoBefore
+Package com.example.ThingsToDoBefore
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
