@@ -1,4 +1,4 @@
-Package com.example.ThingsToDoBefore
+package com.example.ThingsToDoBefore
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -7,11 +7,16 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "thingtodobefore")
-public class ttdb {
 
-     private int mId;
+//nome da classe errado. isso tem impacto no construtor. temos que seguir um padrão 'ThingTodoBefore'. veja a situação enviei
+// um arquivo com o nome da classe. todos estamos programando junto em equipe. sei que o seu 'ttdb' é um resumo, porém,
+// precisa estar combinado com a equipe.
+
+public class ThingTodoBefore {
+
+//removido daqui
      private String mCreationDate;
-     private String mDescription;
+//removido daqui
      private int mAge;
      private int mGrade;
 
@@ -19,23 +24,24 @@ public class ttdb {
     @PrimaryKey(autoGenerate = true)
     @NonNull
     @ColumnInfo(name = "ttdbId")
+//havia sido declarado mais acima
     private int mId;
-
 
     @Nullable
     @ColumnInfo(name = "ttdbName")
     private String mName;
 
-
+//havia sido declarado mais acima
     private String mDescription;
 
 
-    public ThingsToDoBefore(@Nullable String name, String description, int grade, String creationdate , int age) {
+//observe  o nome do construtor da classe ThingTodoBefore    e qual o nome da classe? ttdb - isso gera erro
+    public ThingTodoBefore(@Nullable String name, String description, int grade, String creationDate , int age) {
         mAge = age;
         mName = name;
         mDescription = description;
         mGrade = grade;
-        mCreationDate = creationDate;
+        mCreationDate = creationDate;  //foi corrigido no argumento do construtor
     }
 
 
@@ -63,7 +69,7 @@ public class ttdb {
 
 
     public String getDescription() {
-        Return mDescription;
+       return mDescription;
     }
 
 
@@ -97,3 +103,6 @@ public class ttdb {
     public void setAge(int age) {
         mAge = age;
     }
+
+//faltou finalizar o bloco da classe com o fecha parenteses
+}
